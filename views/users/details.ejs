@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Détails Utilisateur - Port Russell</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <nav>
+    <span style="color:white;font-weight:bold;font-size:18px">⚓ Port Russell</span>
+    <div>
+      <a href="/dashboard">Tableau de bord</a>
+      <a href="/catways">Catways</a>
+      <a href="/users">Utilisateurs</a>
+      <a href="/docs">Documentation</a>
+      <a href="/logout">Se déconnecter</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Détails de l'utilisateur</h1>
+
+    <div class="card">
+      <p><strong>Nom d'utilisateur :</strong> <%= foundUser.username %></p>
+      <p><strong>Email :</strong> <%= foundUser.email %></p>
+    </div>
+
+    <div class="card">
+      <h2>Modifier l'utilisateur</h2>
+      <form action="/users/edit/<%= foundUser.email %>" method="POST">
+        <label>Nom d'utilisateur</label>
+        <input type="text" name="username" value="<%= foundUser.username %>" required>
+
+        <label>Email</label>
+        <input type="email" name="email" value="<%= foundUser.email %>" required>
+
+        <button type="submit" class="btn btn-primary">Modifier</button>
+      </form>
+    </div>
+
+    <a href="/users" class="btn btn-warning">← Retour à la liste</a>
+  </div>
+
+</body>
+</html>

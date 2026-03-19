@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Documentation API - Port Russell</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <nav>
+    <span style="color:white;font-weight:bold;font-size:18px">⚓ Port Russell</span>
+    <div>
+      <a href="/">Accueil</a>
+      <a href="/dashboard">Tableau de bord</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Documentation de l'API</h1>
+    <p style="margin-bottom:30px">API privée de gestion du Port de Plaisance Russell.</p>
+
+    <div class="card">
+      <h2>🔐 Authentification</h2>
+      <table>
+        <thead><tr><th>Méthode</th><th>Route</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>POST</td><td>/login</td><td>Connexion (email + password)</td></tr>
+          <tr><td>GET</td><td>/logout</td><td>Déconnexion</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>⚓ Catways</h2>
+      <table>
+        <thead><tr><th>Méthode</th><th>Route</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>GET</td><td>/catways</td><td>Liste tous les catways</td></tr>
+          <tr><td>GET</td><td>/catways/:id</td><td>Détails d'un catway</td></tr>
+          <tr><td>POST</td><td>/catways</td><td>Créer un catway</td></tr>
+          <tr><td>PUT</td><td>/catways/:id</td><td>Modifier l'état d'un catway</td></tr>
+          <tr><td>DELETE</td><td>/catways/:id</td><td>Supprimer un catway</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>📅 Réservations</h2>
+      <table>
+        <thead><tr><th>Méthode</th><th>Route</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>GET</td><td>/catways/:id/reservations</td><td>Liste les réservations d'un catway</td></tr>
+          <tr><td>GET</td><td>/catways/:id/reservations/:idReservation</td><td>Détails d'une réservation</td></tr>
+          <tr><td>POST</td><td>/catways/:id/reservations</td><td>Créer une réservation</td></tr>
+          <tr><td>PUT</td><td>/catways/:id/reservations/:idReservation</td><td>Modifier une réservation</td></tr>
+          <tr><td>DELETE</td><td>/catways/:id/reservations/:idReservation</td><td>Supprimer une réservation</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>👤 Utilisateurs</h2>
+      <table>
+        <thead><tr><th>Méthode</th><th>Route</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>GET</td><td>/users</td><td>Liste tous les utilisateurs</td></tr>
+          <tr><td>GET</td><td>/users/:email</td><td>Détails d'un utilisateur</td></tr>
+          <tr><td>POST</td><td>/users</td><td>Créer un utilisateur</td></tr>
+          <tr><td>PUT</td><td>/users/:email</td><td>Modifier un utilisateur</td></tr>
+          <tr><td>DELETE</td><td>/users/:email</td><td>Supprimer un utilisateur</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>

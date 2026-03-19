@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Port de Plaisance Russell</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-box">
+      <h1>⚓ Port Russell</h1>
+      <p>Application de gestion des réservations de catways</p>
+
+      <% if (error) { %>
+        <div class="error"><%= error %></div>
+      <% } %>
+
+      <form action="/login" method="POST">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="votre@email.com" required>
+
+        <label>Mot de passe</label>
+        <input type="password" name="password" placeholder="••••••••" required>
+
+        <button type="submit" class="btn btn-primary" style="width:100%">Se connecter</button>
+      </form>
+
+      <br>
+      <p style="text-align:center">
+        <a href="/docs">📄 Documentation de l'API</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

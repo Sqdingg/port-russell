@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Catways - Port Russell</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <nav>
+    <span style="color:white;font-weight:bold;font-size:18px">⚓ Port Russell</span>
+    <div>
+      <a href="/dashboard">Tableau de bord</a>
+      <a href="/catways">Catways</a>
+      <a href="/catways/1/reservations">Réservations</a>
+      <a href="/users">Utilisateurs</a>
+      <a href="/docs">Documentation</a>
+      <a href="/logout">Se déconnecter</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Gestion des Catways</h1>
+
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+
+    <div class="card">
+      <h2>Ajouter un catway</h2>
+      <form action="/catways" method="POST">
+        <label>Numéro</label>
+        <input type="number" name="catwayNumber" required>
+
+        <label>Type</label>
+        <select name="catwayType" required>
+          <option value="">-- Choisir --</option>
+          <option value="short">Short</option>
+          <option value="long">Long</option>
+        </select>
+
+        <label>État</label>
+        <textarea name="catwayState" rows="2" required></textarea>
+
+        <button type="submit" class="btn btn-success">Ajouter</button>
+      </form>
+    </div>
+
+    <h2>Liste des catways</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>N°</th>
+          <th>Type</th>
+          <th>État</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% catways.forEach(c =>
